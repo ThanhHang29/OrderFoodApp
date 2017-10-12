@@ -13,6 +13,15 @@ public class NhanVienDTO {
         return MANV;
     }
 
+    public NhanVienDTO(int MANV,  String TENDN, String MATKHAU, String GIOITINH, String NGAYSINH, int CMND) {
+        this.MANV = MANV;
+        this.CMND = CMND;
+        this.TENDN = TENDN;
+        this.MATKHAU = MATKHAU;
+        this.GIOITINH = GIOITINH;
+        this.NGAYSINH = NGAYSINH;
+    }
+
     public void setMANV(int MANV) {
         this.MANV = MANV;
     }
@@ -57,5 +66,15 @@ public class NhanVienDTO {
         this.NGAYSINH = NGAYSINH;
     }
 
-
+    @Override
+    public String toString() {
+        return "NhanVienDTO{" +
+                "MANV=" + MANV +
+                ", CMND=" + CMND +
+                ", TENDN='" + TENDN + '\'' +
+                ", MATKHAU='" + MATKHAU + '\'' +
+                ", GIOITINH='" + GIOITINH + '\'' +
+                ", NGAYSINH='" + NGAYSINH + '\'' +
+                '}';
+    }
 }

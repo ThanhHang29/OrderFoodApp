@@ -1,6 +1,7 @@
 package com.example.kira.orderfoodapp.database;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -50,7 +51,7 @@ public class CreateDatabase extends SQLiteOpenHelper{
 
 
     public CreateDatabase(Context context) {
-        super(context, "OrderFood", null, 1);
+        super(context, "OrderFood.db", null, 1);
     }
 
     @Override
@@ -86,10 +87,20 @@ public class CreateDatabase extends SQLiteOpenHelper{
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS" + TB_NHANVIEN);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS" + TB_BANAN);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS" + TB_MONAN);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS" + TB_LOAIMONAN);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS" + TB_GOIMON);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS" + TB_CHITIETGOIMON);
 
+        onCreate(sqLiteDatabase);
     }
 
-    public SQLiteDatabase open(){
-        return this.getWritableDatabase();
+    public void openDataBase(SQLiteDatabase sqLiteDatabase){
+       sqLiteDatabase = this.getWritableDatabase();
+    }
+    public void closeDatabase(SQLiteDatabase sqLiteDatabase){
+        sqLiteDatabase.close();
     }
 }
