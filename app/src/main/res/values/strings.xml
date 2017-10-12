@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">OrderFoodApp</string>
+    <string name="tendangnhap">Tên đăng nhập</string>
+    <string name="nhapmatkhau">Nhập mật khẩu</string>
+    <string name="nam">Nam</string>
+    <string name="nu">Nữ</string>
+    <string name="ngaysinh">Ngày sinh</string>
+    <string name="cmnd">CMND</string>
+    <string name="dongy">Đồng ý</string>
+    <string name="thoat">Thoát</string>
+    <string name="dangky">Đăng Ký</string>
+    <string name="nhapten">Nhập tên đăng nhập</string>
+</resources>
